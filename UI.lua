@@ -1472,13 +1472,6 @@ end
 library.unload = function()
     print("Unloading")
 
-    function hasProperty(object, propertyName)
-        local success, _ = pcall(function() 
-            object[propertyName] = object[propertyName]
-        end)
-        return success
-    end
-
     for i,v in pairs(tabs) do
 		if v.open then
 			library.closetab(v.tab,true)
@@ -1519,21 +1512,9 @@ library.unload = function()
     
     local label = main[1].label
     label.Visible = false
-
-	for i, v in main[1] do
-        if type(v) ~= "table" then
-            if hasProperty(v, "Visible") then
-                v.Visible = true
-            end
-        else
-            for _, c in pairs(v) do
-                if hasProperty(c, "Visible") then
-                    c.Visible = true
-                end
-            end
-        end
-    end
-
+    
+    local Topbar = main[1].topbar
+    Topbar.Visible = false
 	--
 	libraryopen = false
 end
