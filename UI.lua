@@ -1516,7 +1516,7 @@ library.unload = function()
     minimizebar.Visible = false
     
     local label = main[1].label
-    label.Visible = false
+    print(label.Text)
 	--
 	libraryopen = false
 end
