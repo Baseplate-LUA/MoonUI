@@ -1481,10 +1481,7 @@ library.unload = function()
 	--
 	local topbar = main[1].topbar
 
-    
     topbar.Visible = false
-    
-
 	--
 	main[1].frame.Visible = false
 	main[1].tabbar.Visible = false
