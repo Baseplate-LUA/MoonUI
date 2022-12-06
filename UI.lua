@@ -1481,9 +1481,9 @@ library.unload = function()
 	--
 	local topbar = main[1].topbar
 
-    for i,v in pairs(topbar) do
-        v.Visible = false
-    end
+    
+    topbar.Visible = false
+    
 
 	--
 	main[1].frame.Visible = false
