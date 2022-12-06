@@ -1480,6 +1480,11 @@ library.unload = function()
 	end
 	--
 	local topbar = main[1].topbar
+
+    for i,v in pairs(topbar) do
+        v.Visible = false
+    end
+
 	--
 	main[1].frame.Visible = false
 	main[1].tabbar.Visible = false
@@ -1512,9 +1517,6 @@ library.unload = function()
     
     local label = main[1].label
     label.Visible = false
-    
-    local Topbar = main[1].topbar
-    Topbar.Visible = false
 	--
 	libraryopen = false
 end
