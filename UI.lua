@@ -1505,6 +1505,12 @@ library.unload = function()
 	--
 	local border1 = main[1].borders.mainui.border1
     border1.Visible = false
+
+    local minimizebar = main[1].minimize
+    minimizebar.Visible = false
+    
+    local label = main[1].label
+    label.Visible = false
 	--
 	libraryopen = false
 end
