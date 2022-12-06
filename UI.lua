@@ -1478,40 +1478,15 @@ library.unload = function()
 		v.tab.Visible = false
 	end
 	--
-	local topbar = main[1].topbar
-	--
-	main[1].frame.Visible = false
-	main[1].tabbar.Visible = false
-	--
-	for i,v in pairs(main[1].borders.tabbar) do
-		v.Visible = false
-	end
-	--
-	for i,v in pairs(main[1].borders.topbar) do
-		v.Visible = false
-	end
-	--
-	for i,v in pairs(tabs) do
-		v.tb.Visible = false
-		v.tbborder.Visible = false
-		v.tbtext.Visible = false
-	end
-	--
-	local border3 = main[1].borders.mainui.border3
-    border3.Visible = false
-	--
-	local border2 = main[1].borders.mainui.border2
-    border2.Visible = false
-	--
-	local border1 = main[1].borders.mainui.border1
-    border1.Visible = false
-
-    local minimizebar = main[1].minimize
-    minimizebar.Visible = false
-    
-    local label = main[1].label
-    label.Visible = false
-	--
+	for i, v in main[1] do
+        if type(v) ~= "table" then
+            v.Visible = false
+        else
+            for _, c in pairs(v) do
+                c.Visible = false
+            end
+        end
+    end
 	libraryopen = false
 end
 --
